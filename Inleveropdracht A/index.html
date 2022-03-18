@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app='mainApp' lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Inleveropdracht A</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div ng-controller='formCtrl'>
+        <form name="mainForm" ng-submit="updateValues(mainForm)">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="top-form form-group">
+              <label for='firstName'>First Name:</label><br/>
+              <input type="text" name="firstName" ng-model="firstName" class="form-control-md" required>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+              <label for='lastName'>Last Name:</label><br/>
+              <input type="text" name="lastName" ng-model="lastName" class="form-control-md" required>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+              <label for='postalCode'>Postal Code:</label><br/>
+              <input id="postalCode" type="text" name="postalCode" ng-model="postalCode" class="form-control-md" pattern="[0-9]{4}+[A-Z a-z]{2}" required>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+              <label for='eMail'>E-Mail:</label><br/>
+              <input type="email" name="eMail" ng-model="eMail" class="form-control-md" required><br/><br/>
+            </div>
+          </div>
+        </form>
+        <br/> <br/> <br/>
+        <table class="col-xs-12 col-sm-12 col-md-12">
+          <tr>
+            <th>Voornaam</th>
+              <th>Achternaam</th>
+              <th>Postcode</th>
+             <th>Emailadres</th>
+         </tr>
+         <tr>
+           <td>{{ firstName }}</td>
+             <td>{{ lastName }}</td>
+             <td>{{ postalCode }}</td>
+             <td>{{ eMail }}</td>
+         </tr>
+       </table>
+      </div>
+    </div>
+  </body>
+</html>

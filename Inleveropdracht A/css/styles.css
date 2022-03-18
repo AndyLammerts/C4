@@ -1,0 +1,14 @@
+.top-form{
+  margin-top: 20px;
+}
+
+.form-group .ng-invalid {
+  border-color: red;
+}
+
+.form-group .ng-valid {
+  border-color: green;
+}
+.form-group .ng-untouched {
+  border-color: black;
+}
