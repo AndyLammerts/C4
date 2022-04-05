@@ -8,18 +8,13 @@
   <body>
     <div ng-app="myApp" ng-controller="customersCtrl">
     <table>
-     <tr ng-repeat="x in names">
-     <td>{{ x.Bedrijfsnaam }}</td>
-     <td>{{ x.Adres }}</td>
-     <td>{{ x.Telefoon }}</td>
+     <tr ng-repeat="x in bedrijf">
+     <td scope="col">{{ x.Bedrijfsnaam }}</td>
+     <td scope="col">{{ x.Adres }}</td>
+     <td scope="col">{{ x.Telefoon }}</td>
      </tr>
     </table>
     </div>
-    <script>
-    var app = angular.module('myApp', []);
-    app.controller('customersCtrl', function($scope, $http) {
-     $http.get("auto.php").then(function (response) {$scope.names = response.data.records;});
-    });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

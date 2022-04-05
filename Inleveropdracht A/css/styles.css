@@ -9,6 +9,3 @@
 .form-group .ng-valid {
   border-color: green;
 }
-.form-group .ng-untouched {
-  border-color: black;
-}
