@@ -9,6 +9,8 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
  if ($outp != "") {$outp .= ",".PHP_EOL;}
  $outp .= '{"Bedrijfsnaam":"' . $rs["Bedrijfsnaam"] . '",'.PHP_EOL;
  $outp .= '"Adres":"' . $rs["Adres"] . '",'.PHP_EOL;
+ $outp .= '"Woonplaats":"' . $rs["Woonplaats"] . '",'.PHP_EOL;
+
  $outp .= '"Telefoon":"'. $rs["Telefoon"] . '"}'.PHP_EOL;
 }
 $outp ='{"records":['.$outp.']}';

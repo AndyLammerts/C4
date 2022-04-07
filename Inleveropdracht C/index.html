@@ -3,18 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   </head>
   <body>
-    <div ng-app="myApp" ng-controller="customersCtrl">
-    <table>
-     <tr ng-repeat="x in bedrijf">
-     <td scope="col">{{ x.Bedrijfsnaam }}</td>
-     <td scope="col">{{ x.Adres }}</td>
-     <td scope="col">{{ x.Telefoon }}</td>
-     </tr>
-    </table>
-    </div>
+    <div class="container">
+        <div ng-app="myApp" ng-controller="customersCtrl">
+        <table class="col-8">
+          <tr>
+            <th> Bedrijfsnaam </th>
+            <th> Adres </th>
+            <th> Woonplaats </th>
+            <th> Telefoon </th>
+          </tr>
+         <tr ng-repeat="x in bedrijf">
+         <td scope="col">{{ x.Bedrijfsnaam }}</td>
+         <td scope="col">{{ x.Adres }}</td>
+         <td scope="col">{{ x.Woonplaats }}</td>
+         <td scope="col">{{ x.Telefoon }}</td>
+         </tr>
+        </table>
+        </div>
+      </div>
     <script src="script.js"></script>
   </body>
 </html>

@@ -6,4 +6,7 @@ app.controller('autoCtrl', function($scope) {
     {kenteken:'22-AA-44',kleur:'zwart',merk:'bmw',deuren:'1',prijs:'44444'}
     ];
 
+      $scope.orderByMe = function(auto) {
+          $scope.myOrderBy = auto;
+      }
 });

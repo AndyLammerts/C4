@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 29 mrt 2022 om 11:29
--- Serverversie: 10.4.22-MariaDB
--- PHP-versie: 8.1.2
+-- Gegenereerd op: 05 apr 2022 om 13:46
+-- Serverversie: 10.4.17-MariaDB
+-- PHP-versie: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,7 @@ CREATE TABLE `bedrijf` (
 INSERT INTO `bedrijf` (`ID`, `Bedrijfsnaam`, `Adres`, `Woonplaats`, `Telefoon`) VALUES
 (1, 'Altera', 'Mistweg 45', 'Emmen', '0591569872'),
 (2, 'Mixed Media ', 'Europaweg 345', 'Coevorden', '0524536987'),
-(3, 'Malware\r\nProtection', 'Julianalaan 4', 'Emmen', '0524536987'),
+(3, 'Malware Protection', 'Julianalaan 4', 'Emmen', '0524536987'),
 (4, 'X-mysterie', 'Megaweg 7', 'Coevorden', '0524896325');
 
 --
