@@ -7,31 +7,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
   </head>
-  <body>
+  <body ng-app="myApp" ng-controller="customersCtrl">
     <div class="container">
-      <div ng-app="myApp" ng-controller="customersCtrl">
         <table class="col-12">
           <tr>
             <th> Voornaam </th>
             <th> Achternaam </th>
             <th> Straat </th>
-            <th> Huisnummer </th>
+            <th> Huisnr </th>
             <th> Postcode </th>
             <th> Woonplaats </th>
             <th> Telefoon </th>
+            <th> Edit </th>
+            <th> Delete </th>
           </tr>
-         <tr ng-repeat="x in bedrijf">
-         <td scope="col">{{ x.Voornaam }}</td>
-         <td scope="col">{{ x.Achternaam }}</td>
-         <td scope="col">{{ x.Straat }}</td>
-         <td scope="col">{{ x.Huisnummer }}</td>
-         <td scope="col">{{ x.Postcode }}</td>
-         <td scope="col">{{ x.Woonplaats }}</td>
-         <td scope="col">{{ x.Telefoonnummer }}</td>
-         </tr>
+           <tr ng-repeat="x in bedrijf">
+             <td scope="col">{{ x.Voornaam }}</td>
+             <td scope="col">{{ x.Achternaam }}</td>
+             <td scope="col">{{ x.Straat }}</td>
+             <td scope="col">{{ x.Huisnummer }}</td>
+             <td scope="col">{{ x.Postcode }}</td>
+             <td scope="col">{{ x.Woonplaats }}</td>
+             <td scope="col">{{ x.Telefoonnummer }}</td>
+             <td scope="col"><a href="#!/edit">edit</a></td>
+             <td scope="col"><button ng-click="edit(x.ID)">Edit </button></td>
+             <td scope="col"> Delete </td>
+           </tr>
         </table>
+        <div ng-view></div>
       </div>
-    </div>
   <script src="script.js"></script>
   </body>
 </html>
