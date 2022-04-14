@@ -5,6 +5,7 @@ $conn = new mysqli("localhost", "root", "", "C4");
 
 $result = $conn->query("SELECT ID, Voornaam, Achternaam, Straat, Huisnummer, Postcode, Woonplaats, Telefoonnummer FROM personen");
 $outp = "";
+$count = 0;
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
  if ($outp != "") {$outp .= ",".PHP_EOL;}
     $outp .= '{"ID":"' . $rs["ID"] . '",'.PHP_EOL;
@@ -15,8 +16,9 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
    $outp .= '"Postcode":"' . $rs["Postcode"] . '",'.PHP_EOL;
    $outp .= '"Woonplaats":"' . $rs["Woonplaats"] . '",'.PHP_EOL;
    $outp .= '"Telefoonnummer":"'. $rs["Telefoonnummer"] . '"}'.PHP_EOL;
+   $count++;
  }
-$outp ='{"records":['.$outp.']}';
+$outp ='{"records":['.$outp.'], "counter":'.$count.'}';
 $conn->close();
 echo($outp);
 ?>

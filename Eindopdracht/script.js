@@ -1,4 +1,5 @@
 var app = angular.module('myApp', ["ngRoute"]);
+
   app.config(function($routeProvider) {
   $routeProvider
     .when("/", {
@@ -14,5 +15,6 @@ var app = angular.module('myApp', ["ngRoute"]);
   app.controller('customersCtrl', function($scope, $http) {
     $http.get("JSON/getData.php").then(function(response) {
       $scope.bedrijf = response.data.records;
+      $scope.count = response.data.counter;
     });
 });
