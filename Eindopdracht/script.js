@@ -1,5 +1,4 @@
 var app = angular.module('myApp', ["ngRoute"]);
-
   app.config(function($routeProvider) {
   $routeProvider
     .when("/", {
@@ -17,4 +16,11 @@ var app = angular.module('myApp', ["ngRoute"]);
       $scope.bedrijf = response.data.records;
       $scope.count = response.data.counter;
     });
-});
+  });
+    app.controller('addCtrl', function($scope, $http, info){
+      $http.post("JSON/createData.php",{"voornaam":info.voornaam,"achternaam":info.achternaam,
+        "straat":info.straat,"huisnummer":info.huisnummer,"postcode":info.postcode,"woonplaats":info.woonplaats,
+        "telefoonnummer":info.telefoonnummer}).success(function(data){
+
+      });
+    });
