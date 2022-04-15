@@ -9,11 +9,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
   </head>
   <body>
-    <div ng-app="myApp" ng-controller="customersCtrl">
-      <a href="#!/add/"> Toevoegen </a>
-
-      <ng-view>
-      </ng-view>
+    <div class="container">
+      <div class="mt-4 mb-4">
+        <td scope="col"><a class="btn btn-primary mr-4" href="#!/"> Hoofdpagina </a></td>
+        <td scope="col"><a class="btn btn-primary" href="#!/add"> Toevoegen </a></td>
+      </div>
+      <div ng-app="myApp" ng-controller="customersCtrl">
+        <ng-view>
+        </ng-view>
+      </div>
     </div>
   </body>
 <script src="script.js"></script>

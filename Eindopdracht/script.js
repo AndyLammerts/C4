@@ -5,7 +5,8 @@ var app = angular.module('myApp', ["ngRoute"]);
       templateUrl : "routes/main.html"
     })
     .when("/add", {
-      templateUrl : "routes/add.html"
+      templateUrl : "routes/add.html",
+      controller : "addCtrl"
     })
     .when("/edit", {
       templateUrl : "routes/edit.html",
@@ -17,10 +18,9 @@ var app = angular.module('myApp', ["ngRoute"]);
       $scope.count = response.data.counter;
     });
   });
-    app.controller('addCtrl', function($scope, $http, info){
-      $http.post("JSON/createData.php",{"voornaam":info.voornaam,"achternaam":info.achternaam,
-        "straat":info.straat,"huisnummer":info.huisnummer,"postcode":info.postcode,"woonplaats":info.woonplaats,
-        "telefoonnummer":info.telefoonnummer}).success(function(data){
-
-      });
-    });
+    app.controller('addCtrl', function($scope, $http){
+        $scope.submit = function(info){
+           $http.post("JSON/createData.php",{"voornaam":info.voornaam,"achternaam":info.achternaam,
+             "straat":info.straat,"huisnummer":info.huisnummer,"postcode":info.postcode,"woonplaats":info.woonplaats,
+             "telefoonnummer":info.telefoonnummer})}
+             });
