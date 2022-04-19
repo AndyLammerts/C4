@@ -13,6 +13,7 @@ var app = angular.module('myApp', ["ngRoute"]);
     });
   });
   app.controller('personenCtrl', function($scope, $http, $location, $routeParams) {
+
  //Maakt een functie aan zodat we makkelijk na een functie kunnen redirecten naar het hoofdscherm
     $scope.showData = function() {
      $http.get("JSON/getData.php").then(function(response){
@@ -20,21 +21,6 @@ var app = angular.module('myApp', ["ngRoute"]);
        $location.path("/");
    });
  }
-    //Update persoon, en redirect daarna terug naar het main scherm
-
-       // $http.post("JSON/updateData.php", {
-       //   'ID' : $scope.id,
-       //   'voornaam' : $scope.voornaam,
-       //   'achternaam': $scope.achternaam,
-       //   'straat': $scope.straat,
-       //   'huisnummer': $scope.huisnummer,
-       //   'postcode': $scope.postcode,
-       //   'woonplaats': $scope.woonplaats,
-       //   'telefoonnummer': $scope.telefoonnummer
-       // }).then(function() {
-       //   $scope.showData();
-       // });
-
      //Voeg Persoon toe, en redirect daarna terug naar het main scherm.
     $scope.addPerson = function(info){
        $http.post("JSON/createData.php",{
@@ -50,12 +36,17 @@ var app = angular.module('myApp', ["ngRoute"]);
          });
     }
 
-
     //Verwijder Persoon
     $scope.delete = function(id) {
       $http.post("JSON/deleteData.php", {"id": id})
     }
+    //Sorting
+    $scope.orderByMe = function(y) {
+     $scope.myOrderBy = y;
+   }
   });
+
+
   app.controller('updateCtrl', function($scope, $http, $location, $routeParams) {
     $scope.id = parseInt($routeParams.id);
     $scope.voornaam = $routeParams.voornaam;

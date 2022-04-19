@@ -1,16 +1,16 @@
 <div ng-init="showData()">
   <table class="col-12">
     <tr>
-      <th> ID </th>
-      <th> Voornaam </th>
-      <th> Achternaam </th>
-      <th> Straat </th>
-      <th> Huisnr </th>
-      <th> Postcode </th>
-      <th> Woonplaats </th>
-      <th> Telefoon </th>
+      <th ng-click="orderByMe('ID')"> ID </th>
+      <th ng-click="orderByMe('Voornaam')"> Voornaam </th>
+      <th ng-click="orderByMe('Achternaam')"> Achternaam </th>
+      <th ng-click="orderByMe('Straat')"> Straat </th>
+      <th ng-click="orderByMe('Huisnr')"> Huisnr </th>
+      <th ng-click="orderByMe('Postcode')"> Postcode </th>
+      <th ng-click="orderByMe('Woonplaats')"> Woonplaats </th>
+      <th ng-click="orderByMe('Telefoonnummer')"> Telefoon </th>
     </tr>
-    <tr ng-repeat="x in bedrijf">
+    <tr title="{{x.TijdToegevoegd}}" ng-repeat="x in bedrijf | orderBy:myOrderBy">
       <td scope="col">{{ x.ID }} </td>
       <td scope="col">{{ x.Voornaam }}</td>
       <td scope="col">{{ x.Achternaam }}</td>
