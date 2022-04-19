@@ -19,7 +19,7 @@
       <td scope="col">{{ x.Postcode }}</td>
       <td scope="col">{{ x.Woonplaats }}</td>
       <td scope="col">{{ x.Telefoonnummer }}</td>
-      <td scope="col"><a class="btn btn-primary" href="#!/edit"> Edit </a></td>
+      <td scope="col"><a class="btn btn-primary" ng-href="#!edit/{{x.ID}}/{{x.Voornaam}}/{{x.Achternaam}}/{{x.Straat}}/{{x.Huisnummer}}/{{x.Postcode}}/{{x.Woonplaats}}/{{x.Telefoonnummer}}"> Edit </a></td>
       <td scope="col"><a class="btn btn-danger" href="#" ng-click="delete(x.ID)"> Delete </a></td>
      </tr>
   </table>
