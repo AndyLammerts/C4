@@ -11,23 +11,23 @@ var app = angular.module('myApp', ["ngRoute"]);
       templateUrl : "routes/edit.html",
     });
   });
-  app.controller('personenCtrl', function($scope, $http) {
-    $http.get("JSON/getData.php").then(function(response) {
-      $scope.bedrijf = response.data.records;
-      $scope.count = response.data.counter;
-    });
-
+  app.controller('personenCtrl', function($scope, $http, $location) {
+    $scope.showData = function() {
+     $http.get("JSON/getData.php").then(function(response){
+       $scope.bedrijf = response.data.records;
+       $location.path("/");
+   });
+ }
     $scope.addPerson = function(info){
        $http.post("JSON/createData.php",{"voornaam":info.voornaam,"achternaam":info.achternaam,
          "straat":info.straat,"huisnummer":info.huisnummer,"postcode":info.postcode,"woonplaats":info.woonplaats,
-         "telefoonnummer":info.telefoonnummer})
+         "telefoonnummer":info.telefoonnummer}).then(function(){
+           $scope.showData();
+         });
     }
-    
+
     $scope.delete = function(id) {
       $http.post("JSON/deleteData.php", {"id": id})
       console.log(id);
     }
-
-
-
   });
