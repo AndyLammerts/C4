@@ -18,11 +18,11 @@
               <thead class="tablehead">
               <tr>
                  <th scope="col">ID</th>
-                 <th scope="col" ng-click="orderByMe('autos.kenteken')">Kenteken</th>
-                 <th scope="col" ng-click="orderByMe('autos.merk')">Automerk</th>
-                 <th scope="col" ng-click="orderByMe('autos.kleur')">Kleur</th>
-                 <th scope="col" ng-click="orderByMe('autos.deuren')">Aantal Deuren</th>
-                 <th scope="col" ng-click="orderByMe('autos.prijs')">Prijs</th>
+                 <th scope="col" ng-click="orderByMe('kenteken')">Kenteken</th>
+                 <th scope="col" ng-click="orderByMe('merk')">Automerk</th>
+                 <th scope="col" ng-click="orderByMe('kleur')">Kleur</th>
+                 <th scope="col" ng-click="orderByMe('deuren')">Aantal Deuren</th>
+                 <th scope="col" ng-click="orderByMe('prijs')">Prijs</th>
                </tr>
              </thead>
               <tbody ng-repeat ="auto in autos | filter:filterTable | orderBy:myOrderBy">
